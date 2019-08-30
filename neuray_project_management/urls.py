@@ -19,6 +19,6 @@ from master.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('master/',include('master.urls',namespace='master')),
-    path('',index)
+    path('master/', include('master.urls', namespace='master')),
+    path('', index)
 ]

@@ -2,6 +2,7 @@ import os
 
 from django.http import HttpResponse
 from django.shortcuts import render
+from master import models
 
 # Create your views here.
 # def main(request):
@@ -31,3 +32,14 @@ def upload_file(request):
             shuju.write(data)
             shuju.close()
         return render(request, "ok.html")
+
+
+def test(request):
+    if request.method == "POST":
+        person_name = request.POST.get('person_name')
+        department = request.POST.get('department')
+        change = models.Person(personnel_name=person_name, department=department)
+        change.save()
+        return HttpResponse('ok')
+    else:
+        return render(request, "test.html")
