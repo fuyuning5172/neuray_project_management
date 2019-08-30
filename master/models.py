@@ -45,7 +45,7 @@ class Project(models.Model):
     project_id = models.AutoField('project_id', primary_key=True)
     project_name = models.CharField('project_name', max_length=150)
     contract_no = models.CharField('contract_no', max_length=50, unique=True)
-    project_amount = models.FloatField('project_amount')
+    project_amount = models.FloatField('project_amount', null=True)
     project_partner = models.CharField('project_partner', max_length=50, null=True)
     project_contact = models.CharField('project_contact', max_length=50, null=True)
     project_remark = models.CharField('project_remark', max_length=300, null=True)
@@ -66,7 +66,7 @@ class Plan(models.Model):
     """
     plan_id = models.AutoField('自增ID', primary_key=True)
     plan_content = models.CharField('plan_content', max_length=300)
-    project_id = models.OneToOneField(Project, to_field='project_id', on_delete=models.PROTECT, null=True)
+    project_id = models.OneToOneField(Project, to_field='project_id', on_delete=models.PROTECT)
     stage_id = models.ForeignKey(Stage, to_field='stage_id', on_delete=models.PROTECT, null=True)
     is_delete = models.IntegerField('is_delete', default=0)
     create_time = models.DateTimeField('create_time', auto_now_add=True)

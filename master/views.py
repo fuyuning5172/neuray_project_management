@@ -8,7 +8,7 @@ from master import models
 # def main(request):
 #     render(request,"main.html")
 
-
+#登录
 def index(request):
     return render(request, "login.html")
 
@@ -21,19 +21,7 @@ def login(request):
         else:
             return render(request, 'login.html', context={"res": "管理员密码错误"})
 
-
-def upload_file(request):
-    if request.method == "POST":    # 请求方法为POST时，进行处理
-        my_file =request.FILES.get("myfile", None)    # 获取上传的文件，如果没有文件，则默认为None
-        if not my_file:
-            return HttpResponse("没有文件")
-        shuju = open(os.path.join("F:\\upload", my_file.name), 'wb+')    # 打开特定的文件进行二进制的写操作
-        for data in my_file.chunks():      # 分块写入文件
-            shuju.write(data)
-            shuju.close()
-        return render(request, "ok.html")
-
-
+#测试
 def test(request):
     if request.method == "POST":
         person_name = request.POST.get('person_name')
