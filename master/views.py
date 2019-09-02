@@ -73,7 +73,4 @@ def search_person(request):
     if request.method == "GET":
         person = models.Person.objects.all()[0]
         return render(request, "test.html",)
-<<<<<<< HEAD
 
-=======
->>>>>>> 49bef39e3fdad2cb8bda4fc39a909f4440e5f906
