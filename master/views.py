@@ -69,8 +69,27 @@ def delete_person(request):
     elif request.method == "GET":
         return render(request, "test.html")
 
+
+# 查询人员信息列表
 def search_person(request):
     if request.method == "GET":
         person = models.Person.objects.all()[0]
         return render(request, "test.html",)
 
+
+# 增加项目信息
+# 修改项目信息
+# 删除项目信息
+# 查询项目信息列表
+
+
+# 增加计划信息
+# 修改计划信息
+# 删除计划信息
+# 查询计划信息列表
+
+
+# 增加阶段信息
+# 修改阶段信息
+# 删除阶段信息
+# 查询阶段信息列表
