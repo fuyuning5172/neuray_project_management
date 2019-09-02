@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db" uuid="fc6130e1-b78d-4a05-bbd8-e043d7cbcf64">
+    <data-source source="LOCAL" name="db" uuid="ac86a193-a110-48d2-87b9-49d0458f2027">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\pythonWorkspace\neuray_project_management\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\Administrator\Desktop\neuray_project_management\db.sqlite3</jdbc-url>
       <driver-properties>
         <property name="enable_load_extension" value="true" />
       </driver-properties>

@@ -68,3 +68,8 @@ def delete_person(request):
         return HttpResponse('delete!')
     elif request.method == "GET":
         return render(request, "test.html")
+
+def search_person(request):
+    if request.method == "GET":
+        person = models.Person.objects.all()[0]
+        return render(request, "test.html",)
