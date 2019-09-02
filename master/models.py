@@ -11,7 +11,6 @@ class Person(models.Model):
     personnel_name = models.CharField('personnel_name', max_length=50)
     department = models.CharField('department', max_length=50)
     phone_number = models.IntegerField('phone_number', max_length=11, null=True)
-    working_years = models.IntegerField('phone_number', max_length=10, null=True)
     is_delete = models.IntegerField('is_delete', default=0)
     create_time = models.DateTimeField('create_time', auto_now_add=True)
     update_time = models.DateTimeField('update_time', auto_now=True)
