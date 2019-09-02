@@ -21,18 +21,6 @@ def login(request):
             return render(request, 'login.html', context={"res": "管理员密码错误"})
 
 
-# 测试
-def test(request):
-    if request.method == "POST":
-        person_name = request.POST.get('person_name')
-        department = request.POST.get('department')
-        change = models.Person(personnel_name=person_name, department=department)
-        change.save()
-        return HttpResponse('ok')
-    else:
-        return render(request, "test.html")
-
-
 # 增加人员信息
 def add_person(request):
     if request.method == "POST":
