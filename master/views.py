@@ -4,10 +4,6 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from master import models
 
-# Create your views here.
-# def main(request):
-#     render(request,"main.html")
-
 #登录
 def index(request):
     return render(request, "login.html")
@@ -17,7 +13,7 @@ def login(request):
     if request.method == "POST":
         password = request.POST.get('password')
         if password == "123":
-            return render(request, 'main.html')
+            return render(request, 'index.html')
         else:
             return render(request, 'login.html', context={"res": "管理员密码错误"})
 

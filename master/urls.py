@@ -1,7 +1,7 @@
 from django.urls import path
 from master.views import *
 
-app_name = 'app'
+app_name = 'master'
 
 urlpatterns = [
     path('index/', index, name='index'),
