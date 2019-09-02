@@ -62,9 +62,15 @@ def delete_person(request):
     if request.method == "POST":
         person = models.Person.objects.get(personnel_id='1')
         person.is_delete = 1
-        person.delete_time = time.time()
-        print(datetime.datetime)
+        person.delete_time = datetime.datetime.now()
+        print(datetime.datetime.now())
         person.save()
         return HttpResponse('delete!')
     elif request.method == "GET":
         return render(request, "test.html")
+
+def search_person(request):
+    if request.method == "GET":
+        person = models.Person.objects.all()[0]
+        return render(request, "test.html",)
+

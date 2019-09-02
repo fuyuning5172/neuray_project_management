@@ -104,6 +104,7 @@
     <column id="37" parent="7" name="project_id_id">
       <Position>7</Position>
       <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
     <column id="38" parent="7" name="stage_id_id">
       <Position>8</Position>
@@ -160,7 +161,6 @@
     <column id="48" parent="8" name="project_amount">
       <Position>4</Position>
       <DataType>real|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="49" parent="8" name="project_partner">
       <Position>5</Position>
