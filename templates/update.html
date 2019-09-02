@@ -1,0 +1,12 @@
+{% extends './base.html' %}
+{% block biaoge %}
+
+<div class="input-group">
+    <form action="{% url 'master:update_person' %}" method="post">
+  <input name="personnel_name" type="text" class="form-control" aria-label="..." placeholder={{ update_person.personnel_name }}>
+    <input name="department" type="text" class="form-control" aria-label="..." placeholder={{ update_person.department }}>
+    <button type="submit">确定提交</button>
+        </form>
+</div>
+
+{% endblock %}

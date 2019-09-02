@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+
+      {% block biaoge %}
+    <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">人员表</div>
+  <!-- Table -->
+  <table class="table">
+      <tr>
+          <td>姓名</td>
+          <td>部门</td>
+          <td>电话</td>
+          <td>功能一</td>
+          <td>功能二</td>
+      </tr>
+
+             {% for person in personlist %}
+                          <tr>
+          <td>{{ person.personnel_name }}</td>
+          <td>{{ person.department }}</td>
+          <td>{{ person.create_time }}</td>
+          <td><a href={% url 'master:update_person' %}?person_id={{ person.id }}>修改</a></td>
+{#                          <td><a href={% url 'master:delete_person' %}?person_id={{ person.id }}>删除</a></td>#}
+      </tr>
+                {% empty %}
+                    暂无数据
+                {% endfor %}
+
+  </table>
+</div>
+   {% endblock %}

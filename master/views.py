@@ -47,19 +47,19 @@ def add_person(request):
 
 # 修改人员信息
 def update_person(request):
-    if request.method == "POST":
-        person = models.Person.objects.get(personnel_id='1')
-        person.personnel_name = request.POST.get('person_name')
-        person.department = request.POST.get('department')
+    if request.method == "GET":
+        person_id = request.GET.get('person_id')
+        person = models.Person.objects.get(personnel_id=person_id)
         person.save()
-        return HttpResponse('ok')
-    elif request.method == "GET":
-        return render(request, "test.html")
+        return render(request, "update.html",context={{"update_person":person}})
+    else:
+        person_id = request.GET.get('person_id')
+        person = models.Person.objects.get(personnel_id=person_id)
 
 
 # 删除人员信息
 def delete_person(request):
-    if request.method == "POST":
+    if request.method == "GET":
         person = models.Person.objects.get(personnel_id='1')
         person.is_delete = 1
         person.delete_time = time.time()
@@ -68,8 +68,12 @@ def delete_person(request):
         return HttpResponse('delete!')
     elif request.method == "GET":
         return render(request, "test.html")
-
+#展示人员
 def search_person(request):
     if request.method == "GET":
-        person = models.Person.objects.all()[0]
-        return render(request, "test.html",)
+        personlist = models.Person.objects.all()
+        print(personlist[0].personnel_name,"_______________")
+        data = models.Person(personnel_name='ceshiname', department="ceshidep")
+        data.save()
+        return render(request, "person.html",context={"personlist":personlist})
+
